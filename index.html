@@ -1,1 +1,138 @@
-index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#111111">
+<title>MMW PLAY | Fashion Store</title>
+<style>
+:root{--yellow:#ffd600;--black:#101010;--panel:#1b1b1b;--muted:#aaa}
+*{box-sizing:border-box}
+body{margin:0;background:var(--black);color:#fff;font-family:Arial,sans-serif}
+header{background:#080808;padding:18px 16px;border-bottom:2px solid var(--yellow);position:sticky;top:0;z-index:5}
+nav{max-width:1050px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-size:25px;font-weight:900;color:var(--yellow);letter-spacing:1px}
+.logo span{color:white}
+.cart{background:var(--yellow);color:#111;padding:10px 13px;border:0;border-radius:8px;font-weight:bold}
+.hero{padding:45px 20px;text-align:center;background:linear-gradient(140deg,#292300,#111 65%);border-bottom:1px solid #333}
+.tag{color:var(--yellow);font-size:12px;font-weight:bold;letter-spacing:3px}
+h1{font-size:38px;line-height:1.08;margin:15px 0}
+.hero p{color:#ccc;line-height:1.6}
+.btn{display:inline-block;background:var(--yellow);color:#111;text-decoration:none;font-weight:bold;border:0;border-radius:8px;padding:13px 18px;cursor:pointer}
+main{max-width:1050px;margin:auto;padding:26px 16px}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:10px}
+h2{font-size:23px;margin:8px 0 20px}
+.section-head small{color:var(--muted)}
+.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.product{background:var(--panel);border:1px solid #333;border-radius:12px;overflow:hidden}
+.photo{height:155px;background:linear-gradient(135deg,#292929,#111);display:flex;align-items:center;justify-content:center;text-align:center;color:#ddd;padding:10px;font-size:13px}
+.photo svg{width:95px;height:110px}
+.details{padding:12px}
+.details h3{font-size:15px;line-height:1.4;margin:0 0 8px}
+.price{font-size:19px;color:var(--yellow);font-weight:bold;margin:8px 0}
+.stock{font-size:12px;color:#bbb;margin-bottom:12px}
+.add{width:100%;background:var(--yellow);border:0;border-radius:7px;padding:11px 4px;font-weight:bold;cursor:pointer}
+.add:disabled{background:#555;color:#ccc}
+.info{margin-top:25px;background:#191919;border:1px solid #333;padding:18px;border-radius:12px}
+.info p{color:#ccc;line-height:1.6;font-size:14px}
+label{display:block;margin:12px 0 6px;font-size:14px}
+input,textarea,select{width:100%;padding:12px;border-radius:7px;border:1px solid #444;background:#101010;color:white;font-size:16px}
+textarea{min-height:75px;resize:vertical}
+.cart-row{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 0;border-bottom:1px solid #333}
+.qty button{padding:5px 10px;margin:0 3px}
+.total{font-size:21px;color:var(--yellow);font-weight:bold;margin:18px 0}
+footer{text-align:center;padding:25px 16px;color:#aaa;border-top:1px solid #333;font-size:13px}
+.notice{font-size:12px;color:#aaa;line-height:1.5}
+@media(min-width:650px){.products{grid-template-columns:repeat(3,minmax(0,1fr))}.photo{height:230px}h1{font-size:52px}.hero{padding:65px 20px}}
+</style>
+</head>
+<body>
+<header>
+<nav>
+<div class="logo">MMW <span>PLAY</span></div>
+<button class="cart" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">CART (<span id="count">0</span>)</button>
+</nav>
+</header>
+<section class="hero">
+<div class="tag">STYLE • COMFORT • CONFIDENCE</div>
+<h1>YOUR STYLE.<br>YOUR RULES.</h1>
+<p>Discover your next look at MMW PLAY.<br>Fashion made simple in Kenya.</p>
+<a class="btn" href="#shop">SHOP COLLECTION</a>
+</section>
+<main>
+<section id="shop">
+<div class="section-head"><h2>Featured Jackets</h2><small>Prices in KSh</small></div>
+<div class="products">
+<article class="product">
+<div class="photo">
+<svg viewBox="0 0 100 120" role="img" aria-label="Dark padded jacket illustration"><path d="M35 12 L18 22 L5 55 L20 62 L28 45 L25 112 L75 112 L72 45 L80 62 L95 55 L82 22 L65 12 L56 25 L44 25 Z" fill="#30352b" stroke="#858878" stroke-width="2"/><path d="M44 25 L50 38 L56 25 M50 38 V111" fill="none" stroke="#aaa" stroke-width="2"/><path d="M28 50 H72 M28 68 H72 M28 86 H72" stroke="#62685a" stroke-width="2"/></svg>
+</div>
+<div class="details">
+<h3>Dark Padded Jacket</h3><div class="price">KSh 1,500</div>
+<div class="stock">Ask us to confirm size and availability.</div>
+<button class="add" onclick="add(0)">ADD TO CART</button>
+</div>
+</article>
+<article class="product">
+<div class="photo">
+<svg viewBox="0 0 100 120" role="img" aria-label="Beige patterned jacket illustration"><path d="M35 12 L18 22 L5 55 L20 62 L28 45 L25 112 L75 112 L72 45 L80 62 L95 55 L82 22 L65 12 L56 25 L44 25 Z" fill="#b5a184" stroke="#e4d4b5" stroke-width="2"/><path d="M44 25 L50 38 L56 25 M50 38 V111" fill="none" stroke="#66553f" stroke-width="2"/><path d="M28 50 H72 M28 68 H72 M28 86 H72" stroke="#89765b" stroke-width="2"/><path d="M32 42 l6 4 m24 -4 l6 4 M32 60 l6 4 m24 -4 l6 4 M32 78 l6 4 m24 -4 l6 4" stroke="#55432f" stroke-width="2"/></svg>
+</div>
+<div class="details">
+<h3>Beige Patterned Padded Jacket</h3><div class="price">KSh 1,500</div>
+<div class="stock">Ask us to confirm size and availability.</div>
+<button class="add" onclick="add(1)">ADD TO CART</button>
+</div>
+</article>
+</div>
+</section>
+<section class="info" id="order">
+<h2>Your Cart & Order</h2>
+<div id="items"><p class="notice">Your cart is empty. Add a jacket above to begin.</p></div>
+<div class="total">Total: KSh <span id="total">0</span></div>
+<label for="customer">Your name</label><input id="customer" autocomplete="name" placeholder="Enter your name">
+<label for="phone">Phone number</label><input id="phone" type="tel" autocomplete="tel" placeholder="e.g. 07XXXXXXXX">
+<label for="location">Delivery location</label><input id="location" placeholder="Estate, town or pickup point">
+<label for="size">Preferred jacket size</label><select id="size"><option value="">Choose a size</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>Confirm with seller</option></select>
+<label for="notes">Extra details (optional)</label><textarea id="notes" placeholder="Colour, quantity or delivery instructions"></textarea>
+<button class="btn" style="width:100%;margin-top:16px" onclick="sendOrder()">CONTINUE ORDER ON WHATSAPP</button>
+<p class="notice">This first version sends your order details to the seller through WhatsApp. It does not take payment or confirm stock. Please verify the seller's WhatsApp number before using this feature.</p>
+</section>
+<section class="info">
+<h2>Shopping with MMW PLAY</h2>
+<p>Fair prices • Friendly service • Delivery arrangements confirmed with the seller.</p>
+<p>All prices are in Kenyan shillings. Product illustrations are placeholders, not the actual jacket photographs.</p>
+</section>
+</main>
+<footer>© 2026 MMW PLAY • Kenya<br>Fashion for your everyday style</footer>
+<script>
+const products=[
+{name:"Dark Padded Jacket",price:1500},
+{name:"Beige Patterned Padded Jacket",price:1500}
+];
+const cart=[0,0];
+function add(i){cart[i]++;render()}
+function change(i,d){cart[i]=Math.max(0,cart[i]+d);render()}
+function render(){
+let count=cart.reduce((a,b)=>a+b,0);
+document.getElementById("count").textContent=count;
+document.getElementById("total").textContent=cart.reduce((sum,n,i)=>sum+n*products[i].price,0).toLocaleString("en-KE");
+let rows=products.map((p,i)=>cart[i]?`<div class="cart-row"><div>${p.name}<br><strong>KSh ${p.price.toLocaleString("en-KE")}</strong></div><div class="qty"><button onclick="change(${i},-1)" aria-label="Remove one">−</button>${cart[i]}<button onclick="change(${i},1)" aria-label="Add one">+</button></div></div>`:"").join("");
+document.getElementById("items").innerHTML=rows||'<p class="notice">Your cart is empty. Add a jacket above to begin.</p>';
+}
+function sendOrder(){
+if(!cart.some(n=>n>0)){alert("Please add a jacket to your cart first.");return}
+const name=document.getElementById("customer").value.trim();
+const phone=document.getElementById("phone").value.trim();
+const location=document.getElementById("location").value.trim();
+if(!name||!phone||!location){alert("Please enter your name, phone number and delivery location.");return}
+const lines=products.map((p,i)=>cart[i]?`${p.name} x ${cart[i]} — KSh ${p.price*cart[i]}`:"").filter(Boolean).join("\n");
+const total=cart.reduce((sum,n,i)=>sum+n*products[i].price,0);
+const msg=`Hello MMW PLAY, I would like to place an order:\n${lines}\nTotal: KSh ${total}\nName: ${name}\nPhone: ${phone}\nDelivery location: ${location}\nSize: ${document.getElementById("size").value||"To confirm"}\nNotes: ${document.getElementById("notes").value||"None"}\nPlease confirm stock, delivery charges and payment options.`;
+alert("Next, WhatsApp will open with your order details. The seller's number must be configured first.");
+}
+render();
+</script>
+</body>
+  </html>
+
